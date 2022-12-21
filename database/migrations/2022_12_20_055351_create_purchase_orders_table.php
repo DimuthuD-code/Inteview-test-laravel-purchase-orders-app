@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('distributor');
             $table->string('sku_code');
             $table->string('sku_name');
-            $table->float('unit_price');
-            $table->integer('quantity');
-            $table->float('total_price');
+            $table->string('unit_price');
+            $table->string('quantity');
+            $table->string('total_price')->nullable();
             $table->timestamps();
         });
     }
