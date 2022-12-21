@@ -10,19 +10,21 @@
                     {{ session()->get('error') }}
                 </div>
                 @endif
-                <div class="card">
-                    <h3 class="card-header text-center">Login</h3>
+                <div class="card border-dark">
+                    <h3 class="card-header text-center bg-dark text-light">Login</h3>
                     <div class="card-body">
                         <form action="{{ route('login.custom') }}" method="post">
                             @csrf
                             <div class="form-group mb-3">
-                                <input type="text" name="email" class="form-control" placeholder="Email">
+                                <span class="material-symbols-outlined p-2 text-dark"  style="position: absolute;">mail</span>
+                                <input type="text" name="email" class="form-control ps-5" placeholder="Email">
                                 @if($errors->has('email'))
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                                 @endif
                             </div>
                             <div class="form-group mb-3">
-                                <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                                <span class="material-symbols-outlined p-2 text-dark"  style="position: absolute;">lock</span>
+                                <input type="password" name="password" id="password" class="form-control ps-5" placeholder="Password">
                                 @if($errors->has('password'))
                                 <span class="text-danger">{{ $errors->first('password') }}</span>
                                 @endif
