@@ -117,7 +117,8 @@ class PoController extends Controller
             'sku_code'      => implode(", ", $data['sku_code']),
             'sku_name'      => implode(", ", $data['sku_name']),
             'unit_price'    => implode(", ", $data['unit_price']),
-            'quantity'      => implode(", ", $data['quantity'])
+            'quantity'      => implode(", ", $data['quantity']),
+            'total_price'   => implode(", ", $data['total_price'])
         ]);
 
         return redirect('po/add')->with('success', 'Purchase Order added');
