@@ -80,6 +80,7 @@
                                 @endphp
 
                                 @for($i = 0; $i < count($skucodes); $i++)
+                                @if( $totalprices[$i] != 0)
                                 <tr>
                                     <td>{{ $skucodes[$i] }}</td>
                                     <td>{{ $skunames[$i] }}</td>
@@ -87,6 +88,7 @@
                                     <td>{{ $quantities[$i] }}</td>
                                     <td>{{ $totalprices[$i] }}</td>
                                 </tr>
+                                @endif
                                 @endfor
                             </tbody>
                         </table>
