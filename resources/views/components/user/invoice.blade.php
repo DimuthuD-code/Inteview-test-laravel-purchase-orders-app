@@ -61,6 +61,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @php $grandtotal =  0; @endphp
                                 @foreach($data as $row)
                                 <tr>
                                     @php 
@@ -68,18 +69,15 @@
                                     @endphp
                                     <td>TEP00{{ $row->id }}</td>
                                     <td>Rs.{{ array_sum($amounts) }} <input type="hidden" class="amounts" value="{{ array_sum($amounts) }}"></td>
+                                    @php  $grandtotal += array_sum($amounts); @endphp
                                 </tr>
-                                @php 
-                                $grandTotal = '';
-                                $grandTotal .= array_sum($amounts)
-                                @endphp
                                 @endforeach
                         </tbody>
                     </table>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="float-end"><h5>Total Amount: <span class="text-success">Rs.{{ $grandTotal }}</span></h5></div>
+                        <div class="float-end"><h5>Total Amount: <span class="text-success">Rs.{{ $grandtotal }}</span></h5></div>
                     </div>
                 </div>
             </div>           
