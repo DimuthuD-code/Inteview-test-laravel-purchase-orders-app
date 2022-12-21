@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <input type="submit" class="btn btn-primary" value="ADD">
+                        <input type="submit" class="btn btn-primary" value="ADD PO">
                     </div>
                 </form>
             </div>
