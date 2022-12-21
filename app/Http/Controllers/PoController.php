@@ -32,31 +32,9 @@ class PoController extends Controller
         return view('components.user.po', compact('data'));
     }
 
-    function excel()
+    public function export_purchase_order()
     {
-        $po_data = DB::table('purchase_orders')->get()->toArray();
-        $po_array[] = array('Zone', 'Region', 'Territory', 'Distributor', 'SKU Code', 'SKU Name', 'Unit Price', 'Quantity', ' Total Amount', 'Date');
-        foreach($po_data as $po)
-        {
-            $po_array[] = array(
-                'Zone'          => $po->zone,
-                'Region'        => $po->region,
-                'Territory'     => $po->territory,
-                'Distributor'   => $po->distributor,
-                'SKU Code'      => $po->sku_code,
-                'SKU Name'      => $po->sku_name,
-                'Unit Price'    => $po->unit_price,
-                'Quantity'      => $po->quantity,
-                'Total Amount'  => $po->total_price,
-                'Date'          => $po->created_at
-            );
-        }
-        Excel::create('PO Data', function($excel) use ($po_array) {
-            $excel->setTitle('PO Data');
-            $excel->sheet('PO Data', function($sheet) use ($po_array) {
-                $sheet->toArray($po_array, null, 'A1', false, false);
-            });
-        })->download('xlsx');
+        return Excel::download(new PurchaseOrdersExport, 'purchase_orders.xlsx');
     }
 
     function getterritory(Request $request)
