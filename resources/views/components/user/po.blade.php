@@ -64,7 +64,7 @@
                             <td>{{ $datetime[0] }}</td>
                             <td>{{ $datetime[1] }}</td>
                             <td>{{ array_sum($total_price) }}</td>
-                            <td><a href="/po/view/{{ $row->id }}" class="btn btn-secondary btn-sm">VIEW</a></td>
+                            <td><button type="button" class="btn btn-secondary btn-sm view" data-id="{{ $row->id }}">VIEW</button></td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -73,6 +73,41 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="poModal" tabindex="-1" role="dialog" aria-labelledby="poModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-light">
+        <h5 class="modal-title" id="poModalLabel">View Purchase Order </h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="view_po_modal">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $(document).on('click', '.view', function(){
+        var id = $(this).data('id');
+        $.ajax({
+            url: "/po/view/"+id,
+            method: "get",
+            success:function(data)
+            {
+                $('#view_po_modal').html(data);
+                $('#poModal').modal('show');
+            }
+        });
+    });
+</script>
 
 <script>
     var checkBoxes = document.getElementsByClassName('po_checkbox');
