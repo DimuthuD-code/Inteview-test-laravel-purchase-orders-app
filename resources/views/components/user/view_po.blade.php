@@ -18,7 +18,7 @@
                     <div class="col-md-3">
                         <div class="form-group mb-3">
                             <label for=""><b>Zone</b></label>
-                            <select name="zone" id="zone" class="form-control dynamic" data-dependent="region">
+                            <select name="zone" id="zone" class="form-control" disabled>
                                 <option value="{{ $data->zone }}">{{ $data->zone }}</option>
                             </select>
                         </div>
@@ -27,7 +27,7 @@
                     <div class="col-md-3">
                         <div class="form-group mb-3">
                             <label for=""><b>Region</b></label>
-                            <select name="region" id="region" class="form-control dynamic" data-dependent="territory_name">
+                            <select name="region" id="region" class="form-control" disabled>
                                 <option value="{{ $data->region }}">{{ $data->region }}</option>
                             </select>
                         </div>
@@ -36,7 +36,7 @@
                     <div class="col-md-3">
                         <div class="form-group mb-3">
                             <label for=""><b>Territory</b></label>
-                            <select name="territory" id="territory_name" class="form-control">
+                            <select name="territory" id="territory_name" class="form-control" disabled>
                                 <option value="{{ $data->territory }}">{{ $data->territory }}</option>
                             </select>
                         </div>
@@ -45,7 +45,7 @@
                     <div class="col-md-3">
                         <div class="form-group mb-3">
                             <label for=""><b>Distributor</b></label>
-                            <select name="distributor" id="distributor" class="form-control">
+                            <select name="distributor" id="distributor" class="form-control" disabled>
                                 <option value="{{ $data->distributor }}">{{ $data->distributor }}</option>
                             </select>
                         </div>
