@@ -21,7 +21,7 @@
                 <div class="col col-md-7">
                     <form action="{{ route('po.invoiceGenarate') }}" method="get">
                         <input type="hidden" name="po_ids[]" id="po_ids">
-                        <input type="submit" class="btn btn-primary btn-sm float-start" id="bulk_invoice" value="Convert to Invoice">
+                        <input type="submit" class="btn btn-primary btn-sm float-end mx-1" id="bulk_invoice" value="Convert to Invoice">
 
                     </form>
                     <a href="{{ route('po.excel') }}" class="btn btn-info btn-sm float-end">Export to Excel</a>
