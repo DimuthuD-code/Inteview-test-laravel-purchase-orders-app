@@ -29,7 +29,7 @@
                         <input type="submit" class="btn btn-primary btn-sm float-end mx-1" id="bulk_invoice" value="Convert to Invoice">
 
                     </form>
-                    <a href="{{ route('po.excel') }}" class="btn btn-info btn-sm float-end">Export to Excel</a>
+                    <a href="{{ route('po.export_purchase_order') }}" class="btn btn-info btn-sm float-end">Export to Excel</a>
                 </div>
             </div>
         </div>
