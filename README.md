@@ -7,3 +7,6 @@ Password: password <br>
 <h4> User: </h4><br>
 Email: johnsmith@gmail.com <br>
 Password: password <br>
+<br>
+<h4> Database: </h4><br>
+purchase-app.sql is here for more details
