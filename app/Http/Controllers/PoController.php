@@ -132,8 +132,14 @@ class PoController extends Controller
     public function invoiceGenarate(Request $request)
     {
         $po_id_array  = $request->input('po_ids');
-        $data = PurchaseOrder::findOrFail($po_id_array);
-        
+
+        if($po_id_array[0] == null)
+        {
+            return redirect('po')->with('warning', 'Please select po number');
+        }
+
+        $data = PurchaseOrder::whereIn('id', [$po_id_array[0]])->get();
+
         return view('components.user.invoice', compact('data'));
     }
 }
