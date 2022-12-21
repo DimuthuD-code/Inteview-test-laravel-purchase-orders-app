@@ -14,6 +14,11 @@
         {{ session()->get('success') }}
     </div>
     @endif
+    @if(session()->has('warning'))
+    <div class="alert alert-warning">
+        {{ session()->get('warning') }}
+    </div>
+    @endif
     <div class="card">
         <div class="card-header">
             <div class="row">
