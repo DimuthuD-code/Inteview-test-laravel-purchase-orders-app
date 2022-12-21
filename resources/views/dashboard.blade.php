@@ -37,39 +37,39 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::segment(1) == 'dashboard' ? 'active' : '' }}" aria-current="page" href="/dashboard">Dashboard</a>
+                        <li class="nav-item {{ Request::segment(1) == 'dashboard' ? 'bg-light' : '' }}" aria-current="page">
+                            <a class="nav-link {{ Request::segment(1) == 'dashboard' ? 'active' : 'text-light' }}" aria-current="page" href="/dashboard">Dashboard</a>
                         </li>
                         @if(Auth::user()->type == 'Admin')
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::segment(1) == 'zone' ? 'active' : '' }}" aria-current="page" href="/zone">Zone</a>
+                        <li class="nav-item {{ Request::segment(1) == 'zone' ? 'bg-light' : '' }}" aria-current="page">
+                            <a class="nav-link {{ Request::segment(1) == 'zone' ? 'active' : 'text-light' }}" aria-current="page" href="/zone">Zone</a>
                         </li>               
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::segment(1) == 'region' ? 'active' : '' }}" aria-current="page" href="/region">Region</a>
+                        <li class="nav-item {{ Request::segment(1) == 'region' ? 'bg-light' : '' }}" aria-current="page">
+                            <a class="nav-link {{ Request::segment(1) == 'region' ? 'active' : 'text-light' }}" aria-current="page" href="/region">Region</a>
                         </li>               
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::segment(1) == 'territory' ? 'active' : '' }}" aria-current="page" href="/territory">Territory</a>
+                        <li class="nav-item {{ Request::segment(1) == 'territory' ? 'bg-light' : '' }}" aria-current="page">
+                            <a class="nav-link {{ Request::segment(1) == 'territory' ? 'active' : 'text-light' }}" aria-current="page" href="/territory">Territory</a>
                         </li>               
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::segment(1) == 'users' ? 'active' : '' }}" aria-current="page" href="/users">Users</a>
+                        <li class="nav-item {{ Request::segment(1) == 'users' ? 'bg-light' : '' }}" aria-current="page">
+                            <a class="nav-link {{ Request::segment(1) == 'users' ? 'active' : 'text-light' }}" aria-current="page" href="/users">Users</a>
                         </li>               
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::segment(1) == 'product' ? 'active' : '' }}" aria-current="page" href="/product">Product</a>
+                        <li class="nav-item {{ Request::segment(1) == 'product' ? 'bg-light' : '' }}" aria-current="page">
+                            <a class="nav-link {{ Request::segment(1) == 'product' ? 'active' : 'text-light' }}" aria-current="page" href="/product">Product</a>
                         </li>               
                         @endif
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::segment(1) == 'po' && Request::segment(2) == '' ? 'active' : '' }}" aria-current="page" href="/po">PO</a>
+                        <li class="nav-item {{ Request::segment(1) == 'po' && Request::segment(2) == '' ? 'bg-light' : '' }}" aria-current="page">
+                            <a class="nav-link {{ Request::segment(1) == 'po' && Request::segment(2) == '' ? 'active' : 'text-light' }}" aria-current="page" href="/po">PO</a>
                         </li>               
                         @if(Auth::user()->type == 'User')
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::segment(1) == 'po' && Request::segment(2) == 'add' ? 'active' : '' }}" aria-current="page" href="/po/add">Add PO</a>
+                        <li class="nav-item {{ Request::segment(1) == 'po' && Request::segment(2) == 'add' ? 'bg-light' : '' }}" aria-current="page">
+                            <a class="nav-link {{ Request::segment(1) == 'po' && Request::segment(2) == 'add' ? 'active' : 'text-light' }}" aria-current="page" href="/po/add">Add PO</a>
                         </li> 
                         @endif              
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                            <a class="nav-link text-light" href="{{ route('logout') }}">Logout</a>
                         </li>
 
                     </ul>
