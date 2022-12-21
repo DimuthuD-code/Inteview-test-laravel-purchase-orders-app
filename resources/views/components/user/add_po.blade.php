@@ -103,7 +103,8 @@
                                             <input type="number" name="quantity[]" id="qty" class="text-center iqty" onchange="subTotal()" min="0" max="{{ $row->volume }}" >
                                         </td>
                                         <td>
-                                            <input class="text-center itotal" type="text" name="total_price[]" id="total_price" style="border: none;" disabled>
+                                            <span class="itot"></span>
+                                            <input type="hidden" name="total_price[]" id="total_price" class="text-center itotal">
                                         </td>
                                     </tr>
                                     @endforeach
@@ -124,14 +125,14 @@
     var iprice  = document.getElementsByClassName('iprice');
     var iqty    = document.getElementsByClassName('iqty');
     var itotal  = document.getElementsByClassName('itotal');
-    console.log(iprice);
-    console.log(iqty);
-    console.log(itotal);
+    var itot    = document.getElementsByClassName('itot');
+
 
     function subTotal()
     {
         for(i=0; i<iprice.length; i++)
         {
+            itot[i].innerText = (iprice[i].value)*(iqty[i].value);
             itotal[i].setAttribute("value", (iprice[i].value)*(iqty[i].value));
         }
     }
