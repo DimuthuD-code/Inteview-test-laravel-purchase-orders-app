@@ -127,6 +127,6 @@ Route::get('po/add_validation', [PoController::class, 'add_validation'])->name('
 
 Route::get('po/view/{id}', [PoController::class, 'view'])->name('po.view');
 
-Route::get('po/excel', [PoController::class, 'excel'])->name('po.excel');
+Route::get('po/export_purchase_order', [PoController::class, 'export_purchase_order'])->name('po.export_purchase_order');
 
 Route::get('po/invoiceGenarate', [PoController::class, 'invoiceGenarate'])->name('po.invoiceGenarate');
