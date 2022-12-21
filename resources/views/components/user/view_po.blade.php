@@ -66,6 +66,7 @@
                                     <th>SKU NAME</th>
                                     <th>UNIT PRICE</th>
                                     <th>ENTER QTY</th>
+                                    <th>TOTAL AMOUNT</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -76,7 +77,6 @@
                                 $quantities = explode(", ", $data->quantity);
                                 $totalprices = explode(", ", $data->total_price);
 
-                                echo($skucodes[0]);
                                 @endphp
 
                                 @for($i = 0; $i < count($skucodes); $i++)
@@ -85,6 +85,7 @@
                                     <td>{{ $skunames[$i] }}</td>
                                     <td>{{ $unitprices[$i] }}</td>
                                     <td>{{ $quantities[$i] }}</td>
+                                    <td>{{ $totalprices[$i] }}</td>
                                 </tr>
                                 @endfor
                             </tbody>
